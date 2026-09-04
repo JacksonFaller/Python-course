@@ -4,17 +4,31 @@ A practical Python course for experienced C# developers.
 
 This course assumes you already know programming, OOP, HTTP, SQL, testing, Git, and general software engineering. It focuses on the parts that are different, idiomatic, or especially useful in Python.
 
+## Goal
+
+By the end, you should be comfortable joining an existing Python backend project, reading unfamiliar Python, building small services and automation tools, working with APIs and databases, writing tests, and packaging an application.
+
 ## How to use this repository
 
-Work through the modules in order. Read `lesson.md` first, then open `exercises.md` and complete the tasks using the starter files under `exercises/`. Run the provided tests where available. Solutions live under `solutions/` and are intentionally kept separate.
+Work through the modules in order. Each lesson teaches a small set of concepts. Each exercise is a separate task in `exercises.md` and, when useful, has a runnable starter in `exercises/` plus tests in `tests/`.
 
-A module has three distinct layers:
+A typical exercise loop is:
 
-- `lesson.md` — concepts, examples, diagrams, and references. No exercise instructions live here.
-- `exercises.md` — the actual tasks, hints, stretch work, and links to starter files/tests.
-- `exercises/` — runnable starter code with the boilerplate already provided.
+```text
+lesson.md
+   ↓
+exercises.md
+   ↓
+open the matching starter in exercises/
+   ↓
+implement the TODOs
+   ↓
+pytest tests/...
+   ↓
+compare with solutions/ only after trying
+```
 
-When an exercise says to look something up, use the linked official documentation before reaching for a tutorial.
+The tests are feedback, not a substitute for reading the task. Some investigation exercises intentionally have no automated answer.
 
 ## Course map
 
@@ -36,14 +50,11 @@ When an exercise says to look something up, use the linked official documentatio
 
 ## Projects
 
-### Project 1: Log Analyzer
-A CLI application that reads web-server logs, calculates useful metrics, and produces a report.
+- [Project 01 - Log Analyzer](projects/01-log-analyzer/README.md)
+- [Project 02 - Inventory API](projects/02-inventory-api/README.md)
+- [Project 03 - Data Integration Service](projects/03-data-integration-service/README.md)
 
-### Project 2: Inventory API
-A FastAPI service backed by PostgreSQL/SQLAlchemy.
-
-### Project 3: Data Integration Service
-An ingestion pipeline that pulls data from an external API, validates and transforms it, stores it, and exposes selected results through an API.
+Projects are deliberately less guided than module exercises. Project 01 has a starter and reference implementation; Projects 02 and 03 become progressively more open-ended.
 
 ## Setup
 
@@ -67,25 +78,18 @@ Activate it on macOS/Linux:
 source .venv/bin/activate
 ```
 
-Upgrade pip:
+Install the course and development dependencies:
 
 ```bash
-python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
 ```
 
-Install the test runner when you reach the first exercises that use it:
+Run all automated checks:
 
 ```bash
-python -m pip install pytest
+pytest
+ruff check .
 ```
-
-Run all currently available tests with:
-
-```bash
-python -m pytest
-```
-
-The course will introduce other dependencies as they become useful rather than installing the entire ecosystem on day one.
 
 ## Official documentation
 
