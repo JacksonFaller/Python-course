@@ -68,13 +68,7 @@ for user, role in zip(users, roles):
 
 ## 5. A real application: import pipeline
 
-Suppose a service imports records from a CSV export. The application needs to:
-
-1. parse records
-2. reject malformed records
-3. normalize values
-4. calculate derived fields
-5. produce records ready for persistence
+Suppose a service imports records from a CSV export. The application needs to parse records, reject malformed records, normalize values, calculate derived fields, and produce records ready for persistence.
 
 Keep each step small:
 
@@ -102,15 +96,7 @@ This is a small pipeline, but the same shape appears in ETL jobs, API integratio
 
 ## 6. Don't overuse `map` and `filter`
 
-Python has `map()` and `filter()`, but comprehensions are often easier to read for straightforward transformations.
-
-Prefer:
-
-```python
-active = [user for user in users if user["active"]]
-```
-
-over an unnecessarily indirect expression. Learn both because you will encounter them in existing code.
+Python has `map()` and `filter()`, but comprehensions are often easier to read for straightforward transformations. Learn both because you will encounter them in existing code.
 
 ## 7. `*args` and `**kwargs`
 
@@ -123,43 +109,9 @@ def log_event(message: str, *tags: str, **metadata: str) -> None:
 
 Do not use them merely to make an API flexible. Explicit parameters are usually easier to understand.
 
-## Exercise - log processing pipeline
+## What's next
 
-You are given web access logs represented as dictionaries:
-
-```python
-logs = [
-    {"path": "/api/orders", "status": 200, "duration_ms": 31},
-    {"path": "/api/orders", "status": 500, "duration_ms": 91},
-    {"path": "/api/users", "status": 200, "duration_ms": 18},
-    {"path": "/api/orders", "status": 200, "duration_ms": 42},
-]
-```
-
-Build functions that:
-
-1. return only failed requests (`status >= 500`)
-2. return the slowest request
-3. calculate average duration by path
-4. calculate an error count by path
-
-Keep each operation separate. Then write a function that produces one report from the four operations.
-
-### Stretch
-
-Change the implementation so the input can be an iterator rather than a list. Think about which operations require more than one pass over the data.
-
-### Investigation
-
-Look up:
-
-- `collections.Counter`
-- `collections.defaultdict`
-- `statistics.fmean`
-- generator expressions
-- `itertools.groupby`
-
-Decide which are useful for this problem and why.
+Open [`exercises.md`](exercises.md). The log-processing task has a ready-to-run starter and tests; some of the investigation tasks are intentionally open-ended.
 
 ## Documentation
 

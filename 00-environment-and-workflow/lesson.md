@@ -49,8 +49,6 @@ For now, recognize it as the central configuration file rather than trying to me
 
 ## 4. Your first tiny application
 
-Create a directory containing:
-
 ```text
 hello-python/
 ├── .venv/
@@ -75,32 +73,9 @@ Don't worry about every detail yet. You will meet functions, imports, annotation
 
 Run it. Then deliberately break the import and observe the error. Python's traceback is part of your development workflow; get used to reading it from the bottom upward.
 
-## Exercise
+## What's next
 
-Create `environment_check.py` that:
-
-1. Prints the Python version.
-2. Prints the executable path.
-3. Prints the current working directory.
-4. Prints whether a directory named `.venv` exists.
-
-Use the standard library documentation to find the APIs you need.
-
-### Investigation
-
-Find out the difference between:
-
-```bash
-python script.py
-```
-
-and:
-
-```bash
-python -m package.module
-```
-
-You do not need to write an essay. Just note down when each is useful.
+Open [`exercises.md`](exercises.md). The exercises contain the actual tasks and starter files, so this lesson stays focused on concepts and examples.
 
 ## Documentation
 

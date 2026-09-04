@@ -1,29 +1,21 @@
 # Exercises - Module 03
 
+Start with `../exercises/module03/inventory.py` and run the tests in `../tests/module03/`.
+
 ## Exercise 1 - Inventory
 
-Implement the warehouse scenario from the lesson.
-
-Requirements:
-
-- adding a duplicate SKU should be handled deliberately
-- receiving a non-positive quantity should fail
-- reserving more than available should fail
-- unknown SKUs should produce a useful error
-
-Do not worry about creating a full exception hierarchy.
+Implement a `Warehouse` that supports adding products, lookup by SKU, receiving stock, and reserving stock. Handle duplicate SKUs, non-positive quantities, unknown SKUs, and over-reservation deliberately. Use `InsufficientStockError` for stock violations.
 
 ## Exercise 2 - Repository protocol
 
-Create an in-memory repository with:
+Add an in-memory repository with `save(product)` and `get(sku)` and define a `Protocol` for it. The implementation should satisfy the protocol without inheriting from it.
 
-```python
-save(product)
-get(sku)
-```
+## Exercise 3 - Class or dictionary?
 
-Define a protocol describing those operations. Confirm that your repository does not need to inherit from the protocol.
+Take customer/order code from Module 01 and model the domain with a dataclass. Compare it with the dictionary-based version and note what became clearer or more cumbersome.
 
-## Exercise 3 - Decide whether a class is warranted
+## Documentation
 
-Take one earlier exercise that uses dictionaries. Rewrite it using a dataclass, then compare the two versions. Decide which one communicates the domain better and why.
+- [Classes](https://docs.python.org/3/tutorial/classes.html)
+- [dataclasses](https://docs.python.org/3/library/dataclasses.html)
+- [typing.Protocol](https://docs.python.org/3/library/typing.html#typing.Protocol)

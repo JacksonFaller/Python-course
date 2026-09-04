@@ -118,32 +118,9 @@ The object contains data and the operation that protects its invariant. This is 
 
 Don't create a class just to wrap a dictionary because the language lets you.
 
-## Exercise
+## What's next
 
-Extend the inventory model with:
-
-- a `Warehouse` class containing products
-- lookup by SKU
-- a `receive()` operation
-- a `reserve()` operation
-- a custom exception for insufficient stock
-
-Then write a small scenario that receives stock, reserves stock, and attempts an invalid reservation.
-
-### Stretch
-
-Define a `ProductRepository` protocol and make an in-memory repository satisfy it without explicitly inheriting from the protocol.
-
-### Investigation
-
-Look up:
-
-- `dataclasses.field`
-- frozen dataclasses
-- `Protocol`
-- Python's data model
-
-Consider when a dataclass should be immutable.
+Open [`exercises.md`](exercises.md). The inventory exercise has a starter domain model and tests for the expected behavior.
 
 ## Documentation
 

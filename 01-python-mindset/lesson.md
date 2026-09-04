@@ -35,10 +35,10 @@ Don't turn this into a philosophical discussion yet. Just recognize aliasing whe
 You will use these constantly:
 
 ```python
-names = ["Ada", "Grace"]              # list
-coordinates = (40.7, -74.0)            # tuple
-tags = {"python", "backend"}          # set
-user = {"id": 42, "name": "Ada"}      # dict
+names = ["Ada", "Grace"]
+coordinates = (40.7, -74.0)
+tags = {"python", "backend"}
+user = {"id": 42, "name": "Ada"}
 ```
 
 A dictionary is a general-purpose workhorse. A list is an ordered collection. A tuple is useful for a fixed grouping of values. A set is useful when membership and uniqueness matter.
@@ -135,12 +135,6 @@ def ready_request_ids(requests: list[dict]) -> list[int]:
 
 This is deliberately simple. Later, typing and data models will let us make this safer without losing Python's concise style.
 
-## Exercise mindset
-
-For the exercises, first write the straightforward solution. Then ask whether Python has a standard construct that makes the intent clearer.
-
-Do not optimize for the fewest lines.
-
 ## C# developer traps
 
 Keep an eye out for:
@@ -155,41 +149,9 @@ Keep an eye out for:
 
 You will encounter these naturally as the course progresses.
 
-## Exercise
+## What's next
 
-Build a small **order summary** function.
-
-Input:
-
-```python
-orders = [
-    {"id": 101, "customer": "alice", "total": 120.50, "status": "paid"},
-    {"id": 102, "customer": "bob", "total": 80.00, "status": "pending"},
-    {"id": 103, "customer": "alice", "total": 45.25, "status": "paid"},
-    {"id": 104, "customer": "bob", "total": 30.00, "status": "cancelled"},
-]
-```
-
-Implement:
-
-```python
-def summarize_paid_orders(orders):
-    ...
-```
-
-It should return the total amount and number of paid orders for each customer.
-
-For the data above, the result should communicate that Alice has two paid orders totaling `165.75` and Bob has no paid orders.
-
-Do not worry about perfect typing yet.
-
-### Stretch
-
-Return the paid orders grouped by customer rather than just the totals.
-
-### Investigation
-
-Look up `dict.get()` and `collections.defaultdict`. Reimplement the grouping without using `if customer not in result`.
+Open [`exercises.md`](exercises.md). Start with the code under `exercises/module01/`; it is designed to run without you writing boilerplate first.
 
 ## Documentation
 

@@ -4,22 +4,17 @@ A practical Python course for experienced C# developers.
 
 This course assumes you already know programming, OOP, HTTP, SQL, testing, Git, and general software engineering. It focuses on the parts that are different, idiomatic, or especially useful in Python.
 
-## Goal
-
-By the end, you should be comfortable joining an existing Python backend project, reading unfamiliar Python, building small services and automation tools, working with APIs and databases, writing tests, and packaging an application.
-
 ## How to use this repository
 
-Work through the modules in order. Do the exercises before opening `solutions/`. When an exercise says to look something up, use the linked official documentation rather than searching for a tutorial immediately.
+Work through the modules in order. Read `lesson.md` first, then open `exercises.md` and complete the tasks using the starter files under `exercises/`. Run the provided tests where available. Solutions live under `solutions/` and are intentionally kept separate.
 
-Each module follows roughly this pattern:
+A module has three distinct layers:
 
-1. Context and the Python/C# difference that matters
-2. A small amount of syntax
-3. A real application example
-4. Exercises
-5. A stretch/investigation task
-6. Links to documentation
+- `lesson.md` — concepts, examples, diagrams, and references. No exercise instructions live here.
+- `exercises.md` — the actual tasks, hints, stretch work, and links to starter files/tests.
+- `exercises/` — runnable starter code with the boilerplate already provided.
+
+When an exercise says to look something up, use the linked official documentation before reaching for a tutorial.
 
 ## Course map
 
@@ -44,17 +39,11 @@ Each module follows roughly this pattern:
 ### Project 1: Log Analyzer
 A CLI application that reads web-server logs, calculates useful metrics, and produces a report.
 
-Skills: collections, functions, files, exceptions, modules, testing, CLI design.
-
 ### Project 2: Inventory API
 A FastAPI service backed by PostgreSQL/SQLAlchemy.
 
-Skills: HTTP, validation, application structure, persistence, dependency injection, testing, async boundaries.
-
 ### Project 3: Data Integration Service
 An ingestion pipeline that pulls data from an external API, validates and transforms it, stores it, and exposes selected results through an API.
-
-Skills: integration design, retries, configuration, async I/O, database work, observability, packaging, Docker.
 
 ## Setup
 
@@ -84,7 +73,19 @@ Upgrade pip:
 python -m pip install --upgrade pip
 ```
 
-The course will introduce dependencies as they become useful instead of installing the entire ecosystem on day one.
+Install the test runner when you reach the first exercises that use it:
+
+```bash
+python -m pip install pytest
+```
+
+Run all currently available tests with:
+
+```bash
+python -m pytest
+```
+
+The course will introduce other dependencies as they become useful rather than installing the entire ecosystem on day one.
 
 ## Official documentation
 

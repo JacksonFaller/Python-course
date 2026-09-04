@@ -1,52 +1,27 @@
 # Exercises - Module 01
 
+The lesson is separate from the hands-on work. Start with the templates under `../exercises/module01/` and run `python -m pytest` as you work.
+
 ## Exercise 1 - Customer lookup
 
-Given:
-
-```python
-customers = [
-    {"id": 1, "name": "Alice", "active": True},
-    {"id": 2, "name": "Bob", "active": False},
-    {"id": 3, "name": "Carol", "active": True},
-]
-```
-
-Implement functions that:
-
-1. Return all active customer names.
-2. Find a customer by ID.
-3. Return a dictionary mapping IDs to names.
-
-Use ordinary loops first, then rewrite the parts where a comprehension makes the intent clearer.
+Complete `customer_lookup.py`: return active customer names, find a customer by ID (or `None`), and build an ID-to-name dictionary.
 
 ## Exercise 2 - Normalize configuration
 
-Given a dictionary containing optional configuration values, write a function that returns normalized values:
-
-- missing `host` -> `localhost`
-- missing `port` -> `8080`
-- missing `debug` -> `False`
-
-Research `dict.get()` before writing nested conditionals.
+Complete `config.py`. Missing values should default to `host=localhost`, `port=8080`, and `debug=False`. Look up `dict.get()` before writing nested conditionals.
 
 ## Exercise 3 - Aliasing investigation
 
-Run this code and explain why the output changes:
-
-```python
-original = [1, 2, 3]
-copy = original
-copy.append(4)
-print(original)
-```
-
-Then research at least two ways to create an independent copy and identify when a shallow copy is insufficient.
+Complete `aliasing.py` by adding shallow and deep copy helpers. Research when a shallow copy is insufficient. This exercise is intentionally not test-driven.
 
 ## Exercise 4 - Paid order summary
 
-Complete the exercise from the lesson. Add tests yourself using plain `assert` statements for at least three cases:
+Complete `order_summary.py`. Return `{customer: {"count": int, "total": float}}` for customers with paid orders. Tests cover normal input, empty input, and customers with no paid orders.
 
-- normal input
-- no paid orders
-- empty input
+### Stretch
+
+Implement the same grouping with `collections.defaultdict`.
+
+### Investigation
+
+Compare `dict.get()` and `collections.defaultdict` and decide where each is clearer.
