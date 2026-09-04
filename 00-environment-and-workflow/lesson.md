@@ -49,6 +49,8 @@ For now, recognize it as the central configuration file rather than trying to me
 
 ## 4. Your first tiny application
 
+Create a directory containing:
+
 ```text
 hello-python/
 ├── .venv/
@@ -73,9 +75,9 @@ Don't worry about every detail yet. You will meet functions, imports, annotation
 
 Run it. Then deliberately break the import and observe the error. Python's traceback is part of your development workflow; get used to reading it from the bottom upward.
 
-## What's next
+## What to practice
 
-Open [`exercises.md`](exercises.md). The exercises contain the actual tasks and starter files, so this lesson stays focused on concepts and examples.
+Use `00-environment-and-workflow/exercises.md` for hands-on work. There is intentionally little starter code here because several exercises are about observing your local interpreter and module behavior.
 
 ## Documentation
 
