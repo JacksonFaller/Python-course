@@ -1,0 +1,25 @@
+[project]
+name = "python-for-csharp-developers"
+version = "0.1.0"
+description = "Hands-on Python course for experienced C# developers"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "httpx",
+    "pydantic",
+    "sqlalchemy",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
