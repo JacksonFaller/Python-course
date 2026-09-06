@@ -5,8 +5,6 @@ WORKDIR /app
 COPY pyproject.toml .
 COPY exercises ./exercises
 
-RUN pip install --no-cache-dir .
-
-EXPOSE 8000
-
-CMD ["uvicorn", "exercises.module07.app:app", "--host", "0.0.0.0", "--port", "8000"]
+# TODO: install the project from pyproject.toml.
+# TODO: expose the API port.
+# TODO: choose the command that runs the Module 07 FastAPI app.
