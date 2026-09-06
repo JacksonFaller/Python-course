@@ -10,7 +10,11 @@ Make `InMemoryUserRepository` satisfy `UserRepository` without explicitly inheri
 
 ## Exercise 3 - Check it
 
-Install and run either Pyright or mypy against the exercise directory. Introduce one deliberate type error, observe it, then fix it.
+Run mypy against the exercise directory. Introduce one deliberate type error, observe it, then fix it.
+
+```bash
+mypy exercises/module10
+```
 
 ## Investigation
 
