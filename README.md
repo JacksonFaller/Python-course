@@ -78,12 +78,13 @@ Activate it on macOS/Linux:
 source .venv/bin/activate
 ```
 
-Install the course and development dependencies:
+Install the course and development dependencies with one command:
 
 ```bash
-python -m pip install -e .
-python -m pip install --group dev
+python -m pip install --upgrade "pip>=25.1" && python -m pip install -e . --group dev
 ```
+
+`--group` is supported by pip 25.1 and newer. Upgrading pip first keeps the setup command working in environments that ship an older pip.
 
 Run all automated checks:
 
