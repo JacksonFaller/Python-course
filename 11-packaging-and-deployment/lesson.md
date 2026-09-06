@@ -38,13 +38,16 @@ install → test → lint → build
 
 Later you can add integration tests and container builds.
 
+The repository includes `11-packaging-and-deployment/ci-example.yml` as a standalone workflow example. In a real repository, GitHub Actions discovers workflows under `.github/workflows/`.
+
 ## Exercise
 
-Create a Dockerfile for the Module 07 API and add a GitHub Actions workflow that runs pytest and Ruff.
+Complete the Dockerfile and CI workflow example in the exercise files.
 
 Requirements:
 
 - install the project from `pyproject.toml`
+- use the `dev` dependency group for CI tools
 - run tests in CI
 - run Ruff in CI
 - expose the API port in the container
