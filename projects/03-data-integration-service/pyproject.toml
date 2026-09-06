@@ -10,7 +10,7 @@ dependencies = [
     "psycopg[binary]",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = ["pytest", "pytest-asyncio", "respx", "ruff"]
 
 [tool.pytest.ini_options]
