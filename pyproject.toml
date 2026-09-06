@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "python-for-csharp-developers"
 version = "0.1.0"
@@ -8,14 +12,19 @@ dependencies = [
     "httpx",
     "pydantic",
     "sqlalchemy",
+    "uvicorn",
 ]
 
 [dependency-groups]
 dev = [
+    "mypy",
     "pytest",
     "pytest-asyncio",
     "ruff",
 ]
+
+[tool.setuptools.packages.find]
+include = ["exercises*"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
