@@ -81,7 +81,8 @@ source .venv/bin/activate
 Install the course and development dependencies:
 
 ```bash
-python -m pip install -e ".[dev]"
+python -m pip install -e .
+python -m pip install --group dev
 ```
 
 Run all automated checks:
@@ -89,6 +90,7 @@ Run all automated checks:
 ```bash
 pytest
 ruff check .
+mypy exercises/module10
 ```
 
 ## Official documentation
@@ -101,6 +103,7 @@ ruff check .
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [SQLAlchemy](https://docs.sqlalchemy.org/)
 - [Ruff](https://docs.astral.sh/ruff/)
+- [mypy](https://mypy.readthedocs.io/)
 - [Docker Python guide](https://docs.docker.com/language/python/)
 
 ## A note for C# developers
