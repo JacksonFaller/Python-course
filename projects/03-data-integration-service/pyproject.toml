@@ -1,0 +1,17 @@
+[project]
+name = "data-integration-service"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "httpx",
+    "pydantic",
+    "sqlalchemy",
+    "psycopg[binary]",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "respx", "ruff"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
